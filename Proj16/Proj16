@@ -1,0 +1,82 @@
+#include <iostream>
+using namespace std;
+
+typedef struct{
+    double pes;
+    int num_taronges;
+} tCalibres;
+
+tCalibres cal_1, cal_2, cal_3;
+
+
+int main (){
+
+  
+double peso;
+double diametre;
+
+
+    cout<<"En aquest programa calibrarem les taronges per diametre pesat, sol acceptem un interval concret,"<< endl;
+    cout<<"en cas de posar un calibre superior o inferior mes mosatrara el avis, calibre no valid. Acontinuacio demanarem"<<endl;
+    cout<<"el pes i el diametre:"<<endl;
+    
+   
+    do{
+        cout<<"Introduix el calibre:"<<endl;
+        cin>> diametre;
+        cout<<"Introdueix el pes:"<<endl;
+        cin>> peso;
+
+        
+        if((diametre<=5) or (diametre==7) or (diametre==9) or (diametre>=12))
+        {
+            cout<<"calibre no valid!!"<< endl;
+        }
+        
+        else if((diametre>5) and (diametre<7)){
+
+            cal_1.pes+=peso;
+            cal_1.num_taronges++;
+        }
+           
+        else if((diametre>7) and (diametre<9))
+        {
+            cal_2.pes+=peso;
+            cal_2.num_taronges++;  
+        }
+        else if((diametre>9) and (diametre<12))
+        {
+
+            cal_3.pes+=peso;
+            cal_3.num_taronges++;
+        }
+
+         cout << " El pes acutal de la malla 1 es de " << cal_1.pes << ", i el numero de taronges es de "<< cal_1.num_taronges << endl;
+         cout << " El pes acutal de la malla 2 es de " << cal_2.pes <<", i el numero de taronges es de "<< cal_2.num_taronges << endl; 
+         cout << " El pes acutal de la malla 3 es de " << cal_3.pes << ", i el numero de taronges es de "<< cal_3.num_taronges << endl;
+
+    }while(cal_1.pes<5 or cal_2.pes<5 or cal_3.pes<5);
+
+        if (cal_1.pes<5)
+        {
+            cout<< " Malla calibre-1"<< endl;
+            cout<<" Pes malla "<<cal_1.pes<<endl;
+            cout<<"Numero de taronges " << cal_1.num_taronges << endl;
+        }
+        else if(cal_2.pes<5)
+        {
+            cout<< " Malla calibre-1"<< endl;
+            cout<<" Pes malla "<<cal_2.pes<<endl;
+            cout<<"Numero de taronges " << cal_2.num_taronges << endl;
+        }
+          else if(cal_3.pes<5)
+        {
+            cout<< " Malla calibre-1"<< endl;
+            cout<<" Pes malla "<<cal_3.pes<<endl;
+            cout<<"Numero de taronges " << cal_3.num_taronges << endl;
+        }
+
+
+return 0;
+
+}
